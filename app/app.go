@@ -166,6 +166,7 @@ func NewInitApp(
 		keys[woodpeckertypes.StoreKey],
 	)
 
+
   // this line is used by starport scaffolding # 4
 
 	app.mm = module.NewManager(

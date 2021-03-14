@@ -7,5 +7,11 @@ import (
 var (
 	// Attribute
 	ErrAttributeNotExist = sdkerrors.Register(ModuleName, 1001, "Attribute not exist")
-	ErrAttributeParameterCantEmpty = sdkerrors.Register(ModuleName, 1002, "Attribute's parameter Can't Empty")
-)
+	ErrAttributeParameterCantEmpty = sdkerrors.Register(ModuleName, 1002, "ErrAttributeParameterCantEmpty:")
+
+	// MedicalHistory
+	ErrMedicalHistoryParameterCantEmpty = sdkerrors.Register(ModuleName, 2002, "ErrMedicalHistoryParameterCantEmpty:")
+
+
+
+	)

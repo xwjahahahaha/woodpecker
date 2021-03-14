@@ -15,6 +15,12 @@ func NewHandler(k keeper.Keeper) sdk.Handler {
 		ctx = ctx.WithEventManager(sdk.NewEventManager())
 		switch msg := msg.(type) {
     	// this line is used by starport scaffolding # 1
+		case types.MsgCreateMedicalHistory:
+			return handleMsgCreateMedicalHistory(ctx, k, msg)
+		case types.MsgSetMedicalHistory:
+			return handleMsgSetMedicalHistory(ctx, k, msg)
+		case types.MsgDeleteMedicalHistory:
+			return handleMsgDeleteMedicalHistory(ctx, k, msg)
 		case types.MsgSetAttribute:
 			return handleMsgSetAttribute(ctx, k, msg)
 		case types.MsgDeleteAttribute:

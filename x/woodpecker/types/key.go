@@ -16,7 +16,11 @@ const (
 
 const (
 	AttributePrefix = "attribute-value-"
-
 	AttributeCountPrefix = "attribute-count-"
+)
+		
+const (
+	MedicalHistoryPrefix = "medicalHistory-value-"
+	MedicalHistoryCountPrefix = "medicalHistory-count-"
 )
 		

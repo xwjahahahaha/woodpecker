@@ -4,6 +4,8 @@ import (
   // this line is used by starport scaffolding # 1
 	"github.com/xwj/woodpecker/x/woodpecker/types"
 		
+	
+		
 	abci "github.com/tendermint/tendermint/abci/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -15,6 +17,12 @@ func NewQuerier(k Keeper) sdk.Querier {
 	return func(ctx sdk.Context, path []string, req abci.RequestQuery) ([]byte, error) {
 		switch path[0] {
     // this line is used by starport scaffolding # 2
+		case types.QueryListMedicalHistory:
+			return listMedicalHistory(ctx, path[1:], k)
+		case types.QueryGetMedicalHistory:
+			return getMedicalHistory(ctx, path[1:], k)
+		case types.QueryAllListMedicalHistory:
+			return listAllMedicalHistory(ctx, k)
 		case types.QueryListAttribute:
 			return listAttribute(ctx, k)
 		case types.QueryGetAttribute:

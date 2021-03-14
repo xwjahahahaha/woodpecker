@@ -7,6 +7,9 @@ import (
 // RegisterCodec registers concrete types on codec
 func RegisterCodec(cdc *codec.Codec) {
   // this line is used by starport scaffolding # 1
+		cdc.RegisterConcrete(MsgCreateMedicalHistory{}, "woodpecker/CreateMedicalHistory", nil)
+		cdc.RegisterConcrete(MsgSetMedicalHistory{}, "woodpecker/SetMedicalHistory", nil)
+		cdc.RegisterConcrete(MsgDeleteMedicalHistory{}, "woodpecker/DeleteMedicalHistory", nil)
 		cdc.RegisterConcrete(MsgSetAttribute{}, "woodpecker/SetAttribute", nil)
 		cdc.RegisterConcrete(MsgDeleteAttribute{}, "woodpecker/DeleteAttribute", nil)
 }

@@ -23,6 +23,9 @@ func GetTxCmd(cdc *codec.Codec) *cobra.Command {
 
 	woodpeckerTxCmd.AddCommand(flags.PostCommands(
     // this line is used by starport scaffolding # 1
+		GetCmdCreateMedicalHistory(cdc),
+		GetCmdSetMedicalHistory(cdc),
+		GetCmdDeleteMedicalHistory(cdc),
 		GetCmdSetAttribute(cdc),
 		GetCmdDeleteAttribute(cdc),
 	)...)

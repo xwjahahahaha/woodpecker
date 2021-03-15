@@ -15,9 +15,10 @@ import (
 
 func GetCmdSetBodyIndex(cdc *codec.Codec) *cobra.Command {
 	return &cobra.Command{
-		Use:   "set-bodyIndex [age] [sex] [nation] [weight] [height] [weightIndex] [obesityWaistline] [waistline] [maxBloodPressure] [minBloodPressure] [goodCholesterol] [batCholesterol] [totalCholesterol] [Dyslipidemia] [pvd] [sportActivities] [education] [marry] [income] [sourceCase] [visionBad] [drink] [highBloodPressure] [familialHighBloodPressure] [diabetes] [familialDiabetes] [hepatitis] [familialHepatitis] [chronicFatigue] [hashKey]",
+		Use:   "set-bodyIndex [age] [sex] [nation] [weight] [height] [weightIndex] [obesityWaistline] [waistline] [maxBloodPressure] [minBloodPressure] [goodCholesterol] [batCholesterol] [totalCholesterol] [Dyslipidemia] [pvd] [sportActivities] [education] [marry] [income] [sourceCase] [visionBad] [drink] [highBloodPressure] [familialHighBloodPressure] [diabetes] [familialDiabetes] [hepatitis] [familialHepatitis] [chronicFatigue] [alf] [hashKey]",
 		Short: "Set a new bodyIndex",
-		Args:  cobra.ExactArgs(30),
+		Args:  cobra.ExactArgs(31),
+
 		RunE: func(cmd *cobra.Command, args []string) error {
 			argsAge, _ := strconv.ParseInt(args[0], 10, 64)
 			argsSex, _ := strconv.ParseInt(args[1], 10, 64)
@@ -48,12 +49,13 @@ func GetCmdSetBodyIndex(cdc *codec.Codec) *cobra.Command {
 			argsHepatitis := string(args[26])
 			argsFamilialHepatitis := string(args[27])
 			argsChronicFatigue := string(args[28])
-			argsHashKey := string(args[29])
+			argsALF := string(args[29])
+			argsHashKey := string(args[30])
 
 			cliCtx := context.NewCLIContext().WithCodec(cdc)
 			inBuf := bufio.NewReader(cmd.InOrStdin())
 			txBldr := auth.NewTxBuilderFromCLI(inBuf).WithTxEncoder(utils.GetTxEncoder(cdc))
-			msg := types.NewMsgSetBodyIndex(cliCtx.GetFromAddress(), int32(argsAge), int32(argsSex), string(argsNation), string(argsWeight), string(argsHeight), string(argsWeightIndex), string(argsObesityWaistline), string(argsWaistline), string(argsMaxBloodPressure), string(argsMinBloodPressure), string(argsGoodCholesterol), string(argsBatCholesterol), string(argsTotalCholesterol), string(argsDyslipidemia), string(argsPvd), string(argsSportActivities), string(argsEducation), int32(argsMarry), string(argsIncome), string(argsSourceCase), string(argsVisionBad), string(argsDrink), string(argsHighBloodPressure), string(argsFamilialHighBloodPressure), string(argsDiabetes), string(argsFamilialDiabetes), string(argsHepatitis), string(argsFamilialHepatitis), string(argsChronicFatigue), string(argsHashKey))
+			msg := types.NewMsgSetBodyIndex(cliCtx.GetFromAddress(), int32(argsAge), int32(argsSex), string(argsNation), string(argsWeight), string(argsHeight), string(argsWeightIndex), string(argsObesityWaistline), string(argsWaistline), string(argsMaxBloodPressure), string(argsMinBloodPressure), string(argsGoodCholesterol), string(argsBatCholesterol), string(argsTotalCholesterol), string(argsDyslipidemia), string(argsPvd), string(argsSportActivities), string(argsEducation), int32(argsMarry), string(argsIncome), string(argsSourceCase), string(argsVisionBad), string(argsDrink), string(argsHighBloodPressure), string(argsFamilialHighBloodPressure), string(argsDiabetes), string(argsFamilialDiabetes), string(argsHepatitis), string(argsFamilialHepatitis), string(argsChronicFatigue), string(argsALF), string(argsHashKey))
 			err := msg.ValidateBasic()
 			if err != nil {
 				return err

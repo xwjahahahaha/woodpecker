@@ -40,6 +40,7 @@ func handleMsgSetBodyIndex(ctx sdk.Context, k keeper.Keeper, msg types.MsgSetBod
     	Hepatitis: msg.Hepatitis,
     	FamilialHepatitis: msg.FamilialHepatitis,
     	ChronicFatigue: msg.ChronicFatigue,
+    	ALF: msg.ALF,
     	HashKey: msg.HashKey,
 	}
 	if k.BodyIndexExists(ctx, msg.HashKey) && !msg.Creator.Equals(k.GetBodyIndexOwner(ctx, msg.HashKey)) { // Checks if the the msg sender is the same as the current owner

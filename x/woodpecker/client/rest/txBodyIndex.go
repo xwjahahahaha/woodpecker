@@ -49,6 +49,7 @@ type setBodyIndexRequest struct {
 	FamilialHepatitis string `json:"familialHepatitis"`
 	ChronicFatigue string `json:"chronicFatigue"`
 	HashKey string `json:"hash_key" yaml:"hash_key"`
+	ALF string `json:"alf" yaml:"alf"`
 }
 
 func setBodyIndexHandler(cliCtx context.CLIContext) http.HandlerFunc {
@@ -143,6 +144,8 @@ func setBodyIndexHandler(cliCtx context.CLIContext) http.HandlerFunc {
 		
 		parsedChronicFatigue := req.ChronicFatigue
 
+		parseALF := req.ALF
+
 		parseHashKey := req.HashKey
 
 		msg := types.NewMsgSetBodyIndex(
@@ -176,6 +179,7 @@ func setBodyIndexHandler(cliCtx context.CLIContext) http.HandlerFunc {
 			parsedHepatitis,
 			parsedFamilialHepatitis,
 			parsedChronicFatigue,
+			parseALF,
 			parseHashKey,
 		)
 

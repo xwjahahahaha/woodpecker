@@ -38,10 +38,11 @@ type MsgSetBodyIndex struct {
   Hepatitis string `json:"hepatitis" yaml:"hepatitis"`
   FamilialHepatitis string `json:"familialHepatitis" yaml:"familialHepatitis"`
   ChronicFatigue string `json:"chronicFatigue" yaml:"chronicFatigue"`
+  ALF string `json:"alf" yaml:"alf"`
   HashKey string `json:"hash_key" yaml:"hash_key"`
 }
 
-func NewMsgSetBodyIndex(creator sdk.AccAddress, age int32, sex int32, nation string, weight string, height string, weightIndex string, obesityWaistline string, waistline string, maxBloodPressure string, minBloodPressure string, goodCholesterol string, batCholesterol string, totalCholesterol string, Dyslipidemia string, pvd string, sportActivities string, education string, marry int32, income string, sourceCase string, visionBad string, drink string, highBloodPressure string, familialHighBloodPressure string, diabetes string, familialDiabetes string, hepatitis string, familialHepatitis string, chronicFatigue string, hashKey string) MsgSetBodyIndex {
+func NewMsgSetBodyIndex(creator sdk.AccAddress, age int32, sex int32, nation string, weight string, height string, weightIndex string, obesityWaistline string, waistline string, maxBloodPressure string, minBloodPressure string, goodCholesterol string, batCholesterol string, totalCholesterol string, Dyslipidemia string, pvd string, sportActivities string, education string, marry int32, income string, sourceCase string, visionBad string, drink string, highBloodPressure string, familialHighBloodPressure string, diabetes string, familialDiabetes string, hepatitis string, familialHepatitis string, chronicFatigue string, alf string, hashKey string) MsgSetBodyIndex {
   return MsgSetBodyIndex{
     Creator: creator,
     Age: age,
@@ -73,6 +74,7 @@ func NewMsgSetBodyIndex(creator sdk.AccAddress, age int32, sex int32, nation str
     Hepatitis: hepatitis,
     FamilialHepatitis: familialHepatitis,
     ChronicFatigue: chronicFatigue,
+    ALF: alf,
     HashKey: hashKey,
 	}
 }

@@ -13,7 +13,5 @@ var (
 	ErrMedicalHistoryParameterCantEmpty = sdkerrors.Register(ModuleName, 2002, "ErrMedicalHistoryParameterCantEmpty")
 
 	// BodyIndex
-	ErrBodyIndexParameterCantEmpty = sdkerrors.Register(ModuleName, 2002, "ErrBodyIndexParameterCantEmpty")
-
-
+	ErrBodyIndexParameterCantEmpty = sdkerrors.Register(ModuleName, 3002, "ErrBodyIndexParameterCantEmpty")
 )

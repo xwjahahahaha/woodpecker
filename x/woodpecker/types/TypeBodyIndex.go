@@ -35,5 +35,6 @@ type BodyIndex struct {
     Hepatitis string `json:"hepatitis" yaml:"hepatitis"`
     FamilialHepatitis string `json:"familialHepatitis" yaml:"familialHepatitis"`
     ChronicFatigue string `json:"chronicFatigue" yaml:"chronicFatigue"`
+	ALF string `json:"alf" yaml:"alf"`
 	HashKey string `json:"hash_key" yaml:"hash_key"`
 }

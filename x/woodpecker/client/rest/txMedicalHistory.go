@@ -29,6 +29,7 @@ type createMedicalHistoryRequest struct {
 
 func createMedicalHistoryHandler(cliCtx context.CLIContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		var req createMedicalHistoryRequest
 		if !rest.ReadRESTReq(w, r, cliCtx.Codec, &req) {
 			rest.WriteErrorResponse(w, http.StatusBadRequest, "failed to parse request")
@@ -99,6 +100,7 @@ type setMedicalHistoryRequest struct {
 
 func setMedicalHistoryHandler(cliCtx context.CLIContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		var req setMedicalHistoryRequest
 		if !rest.ReadRESTReq(w, r, cliCtx.Codec, &req) {
 			rest.WriteErrorResponse(w, http.StatusBadRequest, "failed to parse request")
@@ -163,6 +165,7 @@ type deleteMedicalHistoryRequest struct {
 
 func deleteMedicalHistoryHandler(cliCtx context.CLIContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		var req deleteMedicalHistoryRequest
 		if !rest.ReadRESTReq(w, r, cliCtx.Codec, &req) {
 			rest.WriteErrorResponse(w, http.StatusBadRequest, "failed to parse request")

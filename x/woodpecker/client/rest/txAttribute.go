@@ -27,6 +27,7 @@ type createAttributeRequest struct {
 
 func setAttributeHandler(cliCtx context.CLIContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		var req createAttributeRequest
 		if !rest.ReadRESTReq(w, r, cliCtx.Codec, &req) {
 			rest.WriteErrorResponse(w, http.StatusBadRequest, "failed to parse request")
@@ -85,6 +86,7 @@ type deleteAttributeRequest struct {
 
 func deleteAttributeHandler(cliCtx context.CLIContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		var req deleteAttributeRequest
 		if !rest.ReadRESTReq(w, r, cliCtx.Codec, &req) {
 			rest.WriteErrorResponse(w, http.StatusBadRequest, "failed to parse request")

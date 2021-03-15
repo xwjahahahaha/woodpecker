@@ -13,6 +13,7 @@ import (
 
 func listAllMedicalHistoryHandler(cliCtx context.CLIContext, storeName string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		res, _, err := cliCtx.QueryWithData(fmt.Sprintf("custom/%s/%s", storeName, types.QueryAllListMedicalHistory), nil)
 		if err != nil {
 			rest.WriteErrorResponse(w, http.StatusNotFound, err.Error())
@@ -24,6 +25,7 @@ func listAllMedicalHistoryHandler(cliCtx context.CLIContext, storeName string) h
 
 func listMedicalHistoryHandler(cliCtx context.CLIContext, storeName string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		vars := mux.Vars(r)
 		key := vars["hashKey"]
 
@@ -39,6 +41,7 @@ func listMedicalHistoryHandler(cliCtx context.CLIContext, storeName string) http
 
 func getMedicalHistoryHandler(cliCtx context.CLIContext, storeName string) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		w = AllowCors(w)
 		vars := mux.Vars(r)
 		hashKey := vars["hashKey"]
 		ID := vars["id"]

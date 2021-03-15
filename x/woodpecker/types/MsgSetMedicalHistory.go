@@ -56,7 +56,7 @@ func (msg MsgSetMedicalHistory) ValidateBasic() error {
   if msg.Creator.Empty() {
     return sdkerrors.Wrap(sdkerrors.ErrInvalidAddress, "creator can't be empty")
   }
-  if len(msg.HashKey) == 0{
+  if len(msg.HashKey) == 0 || len(msg.ID) == 0{
     return sdkerrors.Wrap(ErrMedicalHistoryParameterCantEmpty, "MedicalHistory's parameter Can't Empty")
   }
   return nil

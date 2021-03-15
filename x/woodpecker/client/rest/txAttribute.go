@@ -44,7 +44,7 @@ func setAttributeHandler(cliCtx context.CLIContext) http.HandlerFunc {
 
 		
 		parsedName := req.Name
-		
+
 		parsedIdNumber := req.IdNumber
 		
 		parsedAddress := req.Address

@@ -8,3 +8,6 @@ package types
 		const QueryGetMedicalHistory = "get-medicalHistory"
 		const QueryAllListMedicalHistory = "list-all-medicalHistory"
 		
+		const QueryListBodyIndex = "list-bodyIndex"
+		const QueryGetBodyIndex = "get-bodyIndex"
+		

@@ -24,3 +24,8 @@ const (
 	MedicalHistoryCountPrefix = "medicalHistory-count-"
 )
 		
+const (
+	BodyIndexPrefix = "bodyIndex-value-"
+	BodyIndexCountPrefix = "bodyIndex-count-"
+)
+		

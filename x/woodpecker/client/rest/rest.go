@@ -9,6 +9,12 @@ import (
 // RegisterRoutes registers woodpecker-related REST handlers to a router
 func RegisterRoutes(cliCtx context.CLIContext, r *mux.Router) {
   // this line is used by starport scaffolding # 1
+		r.HandleFunc("/woodpecker/bodyIndex", listBodyIndexHandler(cliCtx, "woodpecker")).Methods("GET")
+		r.HandleFunc("/woodpecker/bodyIndex/{key}", getBodyIndexHandler(cliCtx, "woodpecker")).Methods("GET")
+		r.HandleFunc("/woodpecker/bodyIndex", setBodyIndexHandler(cliCtx)).Methods("POST")
+		r.HandleFunc("/woodpecker/bodyIndex", deleteBodyIndexHandler(cliCtx)).Methods("DELETE")
+
+		
 
 
 		r.HandleFunc("/woodpecker/medicalHistory", createMedicalHistoryHandler(cliCtx)).Methods("POST")
